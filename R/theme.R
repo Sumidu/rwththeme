@@ -1,15 +1,21 @@
 #' The rwththeme
 #'
-#' @param ...
+#' @param ... additional parameters
 #'
-#' @return
+#' @return the theme object
 #' @export
 #'
 #' @examples
 rwththeme <- function(...){
-  theme_bw(base_size=12, base_family="Helvetica Neue", ...) + theme(
-    panel.background  = element_blank(),
-    plot.background = element_blank()
+  ggplot2::theme_bw(base_size=12, base_family="Helvetica Neue", ...) + ggplot2::theme(
+    panel.background  = ggplot2::element_blank(),
+    plot.background = ggplot2::element_blank()
     #panel.border = element_rect(size=0.75)
   )
+}
+
+.onAttach <- function(libname, pkgname) {
+  packageStartupMessage("RWTH Theme set")
+  #set default theme
+  ggplot2::theme_set(rwththeme())
 }
