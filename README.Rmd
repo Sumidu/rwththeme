@@ -1,10 +1,15 @@
-RWTH Theme
-================
+---
+title: "RWTH Theme"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 The goal of rwththeme is to have a unified look and feel in ggplot2 plots.
 
-Installation
-------------
+## Installation
 
 You can install the released version of rwththeme github with
 
@@ -13,16 +18,15 @@ install.packages("devtools")
 devtools::install_github("sumidu/rwththeme")
 ```
 
-Example
--------
+## Example
 
 Using the theme is as simple as attaching the package.
 
-``` r
+
+```{r example1, message=FALSE, warning=FALSE, fig.retina=2}
 # Using ggplot2 as a plotting library
 library(ggplot2)
 library(rwththeme)
 ggplot(diamonds) + aes(carat,depth) + geom_point()
 ```
 
-<img src="README_files/figure-markdown_github/example1-1.png" width="672" />
